@@ -1,0 +1,26 @@
+<div fxLayout="row">
+  <div fxFlex="25%" class="push-out">
+    <ng-container
+      *ngTemplateOutlet="
+        docsList;
+        context: { docs: this.Config.Docs }
+      "
+    ></ng-container>
+  </div>
+
+  <div fxFlex="65%">
+    <div class="push-out">
+      <ng-container *ngIf="!!ActiveDocData">
+        <markdown [src]="ActiveDocData"></markdown>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #docsList let-docs="docs" let-fns="fns">
+  <mat-list>
+    <mat-list-item *ngFor="let doc of docs">
+      <a mat-raised-button (click)="GoToDoc(doc)">{{ doc.Title }}</a>
+    </mat-list-item>
+  </mat-list>
+</ng-template>
