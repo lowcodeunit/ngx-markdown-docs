@@ -20,7 +20,7 @@
 <ng-template #docsList let-docs="docs" let-fns="fns">
   <mat-nav-list>
     <mat-list-item *ngFor="let doc of docs">
-      <a matLine mat-raised-button (click)="GoToDoc(doc)">{{ doc.Title }}</a>
+      <a matLine (click)="GoToDoc(doc)">{{ doc.Title }}</a>
     </mat-list-item>
   </mat-nav-list>
 </ng-template>
