@@ -39,6 +39,8 @@ export class NgxMarkdownDocsComponent implements OnInit {
     this.http.get(join(docs, 'docs.json')).subscribe(
       (res: NgxMarkdownDocsConfig) => {
         this.Config = res;
+
+        this.Reload();
       }
     )
   }
