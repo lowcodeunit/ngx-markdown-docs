@@ -1,4 +1,4 @@
-<div fxLayout="row">
+<div fxLayout="row" fxLayoutGap="2rem">
   <div fxFlex="20%">
     <ng-container
       *ngTemplateOutlet="
@@ -9,7 +9,7 @@
   </div>
 
   <div fxFlex="75%">
-    <div class="push-out">
+    <div>
       <ng-container *ngIf="!!ActiveDocData">
         <markdown [src]="ActiveDocData"></markdown>
       </ng-container>
