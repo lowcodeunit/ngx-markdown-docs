@@ -34,6 +34,15 @@ export class NgxMarkdownDocsComponent implements OnInit {
   @Output("docChange")
   public DocChange: EventEmitter<NgxMarkdownDocChangeEvent>;
 
+  @Input("docs")
+  public set Docs(docs: string) {
+    this.http.get(join(docs, 'docs.json')).subscribe(
+      (res: NgxMarkdownDocsConfig) => {
+        this.Config = res;
+      }
+    )
+  }
+
   //  Constructors
   constructor(protected http: HttpClient) {
     this.DocChange = new EventEmitter();
@@ -41,15 +50,17 @@ export class NgxMarkdownDocsComponent implements OnInit {
 
   //  Life Cycle
   public ngOnInit() {
-    if (this.Config && this.Config.Docs && this.Config.Docs.length > 0)
-      this.GoToDoc(this.Config.DefaultDocPath || this.Config.Docs[0]);
+    this.Reload();
   }
 
   //  API Methods
   @HostListener("click", ["$event.target"])
   public onClick(btn: any) {
-    if (btn && btn.href && (<string>btn.href).endsWith('.md')) {
-      var path = btn.href.replace(document.getElementsByTagName('base')[0].href, '');
+    if (btn && btn.href && (<string>btn.href).endsWith(".md")) {
+      var path = btn.href.replace(
+        document.getElementsByTagName("base")[0].href,
+        ""
+      );
 
       console.log(`Going to doc: ${path}`);
 
@@ -68,12 +79,16 @@ export class NgxMarkdownDocsComponent implements OnInit {
       ? <string>docOpt
       : (<NgxMarkdownDoc>docOpt).Path;
 
-    if (this.ActiveDocPath != docPath)
-      this.ActiveDocPath = docPath;
+    if (this.ActiveDocPath != docPath) this.ActiveDocPath = docPath;
 
     this.calculateActiveDocData();
 
     this.DocChange.emit({ DocPath: docPath });
+  }
+
+  public Reload() {
+    if (this.Config && this.Config.Docs && this.Config.Docs.length > 0)
+      this.GoToDoc(this.ActiveDocPath || this.Config.DefaultDocPath || this.Config.Docs[0]);
   }
 
   //  Herlpers
