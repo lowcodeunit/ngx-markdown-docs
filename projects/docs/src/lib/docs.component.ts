@@ -48,8 +48,12 @@ export class NgxMarkdownDocsComponent implements OnInit {
   //  API Methods
   @HostListener("click", ["$event.target"])
   public onClick(btn: any) {
-    if (btn && btn.pathname && (<string>btn.pathname).endsWith('.md')) {
-      this.GoToDoc(btn.pathname);
+    if (btn && btn.href && (<string>btn.href).endsWith('.md')) {
+      var path = btn.href.replace(document.getElementsByTagName('base')[0].href, '');
+
+      console.log(`Going to doc: ${path}`);
+
+      this.GoToDoc(path);
 
       return false;
     }
