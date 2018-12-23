@@ -1,5 +1,5 @@
 <div fxLayout="row">
-  <div fxFlex="25%" class="push-out">
+  <div fxFlex="20%" class="push-out">
     <ng-container
       *ngTemplateOutlet="
         docsList;
@@ -8,7 +8,7 @@
     ></ng-container>
   </div>
 
-  <div fxFlex="65%">
+  <div fxFlex="75%">
     <div class="push-out">
       <ng-container *ngIf="!!ActiveDocData">
         <markdown [src]="ActiveDocData"></markdown>
@@ -18,9 +18,9 @@
 </div>
 
 <ng-template #docsList let-docs="docs" let-fns="fns">
-  <mat-list>
+  <mat-nav-list>
     <mat-list-item *ngFor="let doc of docs">
-      <a mat-raised-button (click)="GoToDoc(doc)">{{ doc.Title }}</a>
+      <a matLine mat-raised-button (click)="GoToDoc(doc)">{{ doc.Title }}</a>
     </mat-list-item>
-  </mat-list>
+  </mat-nav-list>
 </ng-template>
