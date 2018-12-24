@@ -14,7 +14,7 @@ export function markedOptionsFactory(): MarkedOptions {
 	};
 
 	renderer.paragraph = (text: string)=> {
-		return `<p class="mat-body-3">${text}</p>`;
+		return `<p class="mat-body-2">${text}</p>`;
 	};
 
 	return {
