@@ -78,11 +78,12 @@ export function markedOptionsFactory(): MarkedOptions {
 
     switch (lastLevel) {
       case 1:
-        pClass = "mat-body-3";
+      case 2:
+      pClass = "mat-body-3";
         break;
 
-      case 2:
       case 3:
+      case 4:
         pClass = "mat-body-2";
         break;
 
