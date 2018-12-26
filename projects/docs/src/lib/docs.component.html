@@ -8,7 +8,7 @@
       >
         <button mat-icon-button disabled></button>
 
-        <a mat-button (click)="GoToDoc(node.path)">{{ node.filename + node.level }}</a>
+        <a mat-button (click)="GoToDoc(node.path)">{{ node.filename }}</a>
       </mat-tree-node>
 
       <mat-tree-node
@@ -25,7 +25,7 @@
           </mat-icon>
         </button>
 
-        {{ node.filename + node.level }}
+        {{ node.filename }}
       </mat-tree-node>
     </mat-tree>
   </div>
