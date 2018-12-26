@@ -21,6 +21,7 @@ export class AppComponent {
           Title: 'Overview'
         }
       ],
+      IndentVariant: .5,
       LocationRoot: 'https://raw.githubusercontent.com/lowcodeunit/lcu-sln-assets/master/docs/'
     };
   }
