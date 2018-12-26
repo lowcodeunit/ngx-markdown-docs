@@ -109,15 +109,15 @@ export class NgxMarkdownDocsComponent implements OnInit {
   //  Fields
 
   //  Properties
-  public TreeControl: FlatTreeControl<FileFlatNode>;
-
-  public TreeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
-
-  public DataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
-
   public ActiveDocPath: string;
 
   public ActiveDocData: string;
+
+  public DataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
+
+  public TreeControl: FlatTreeControl<FileFlatNode>;
+
+  public TreeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
 
   @Input("config")
   public Config: NgxMarkdownDocsConfig;
