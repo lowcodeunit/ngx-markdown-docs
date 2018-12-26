@@ -5,7 +5,7 @@ export class NgxMarkdownDocsConfig {
 
   public DisableNavigation?: boolean;
 
-  public IndentVariant: number = 1;
+  public IndentVariant: number = .5;
 
   public LocationRoot: string;
 }

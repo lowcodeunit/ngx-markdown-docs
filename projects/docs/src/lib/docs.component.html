@@ -13,7 +13,7 @@
 
       <mat-tree-node
         *matTreeNodeDef="let node; when: HasChild"
-        [matTreeNodePadding]=".5"
+        [matTreeNodePadding]="Config.IndentVariant * node.level"
       >
         <button
           mat-icon-button
