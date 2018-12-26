@@ -1,26 +1,10 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { MatListModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatListModule, MatIconModule, MatButtonModule, MatTreeModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
-import { NgxMarkdownDocsComponent } from './docs.component';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { NgxMarkdownDocsComponent, markedOptionsFactory } from './docs.component';
 import { CommonModule } from '@angular/common';
-
-export function markedOptionsFactory(): MarkedOptions {
-	const renderer = new MarkedRenderer();
-
-	renderer.link = (href: string, title: string, text: string) => {
-		return `<a title="${title || ''}" href="${href}">${text || title || href}</a>`;
-	};
-
-	renderer.paragraph = (text: string)=> {
-		return `<p class="mat-body-2">${text}</p>`;
-	};
-
-	return {
-		renderer: renderer
-	};
-}
 
 @NgModule({
   imports: [
@@ -37,6 +21,7 @@ export function markedOptionsFactory(): MarkedOptions {
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatTreeModule,
   ],
   declarations: [
     NgxMarkdownDocsComponent

@@ -1,6 +1,24 @@
-# Workspace
+# LowCodeUnit - Markdown Documentation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+An easy, and vibrant way to display documentation is always a must, when managing Open Source projects it is important to include documentation alongside the developed code.  It is often fairly standard to utilize the Markdown syntax to easily manage these documents in tandom with the code.
+
+The purpose of the @lowcodeunit/ngx-markdown-docs control is to bring a set of publicially hosted Markdown files into an application that loads as HTML and navigates through linked Markdown files within
+
+## How it Works
+
+### The Libraries
+
+ngx-markdown - Supported Markdown syntax reference
+
+@angular
+
+### Markdown Syntax
+
+### Documentation Configuration
+
+
+
+## Development
 
 ## Development server
 
