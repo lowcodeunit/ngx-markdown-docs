@@ -103,7 +103,7 @@ export function markedOptionsFactory(): MarkedOptions {
 @Component({
   selector: "ngx-markdown-docs",
   templateUrl: "./docs.component.html",
-  styles: []
+  styleUrls: ["./docs.component.scss"]
 })
 export class NgxMarkdownDocsComponent implements OnInit {
   //  Fields
