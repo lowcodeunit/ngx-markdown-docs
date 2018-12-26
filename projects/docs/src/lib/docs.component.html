@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutGap="2rem" *ngIf="Config">
-  <div fxFlex="20%">
+  <div fxFlex="auto">
     <mat-tree [dataSource]="DataSource" [treeControl]="TreeControl">
       <mat-tree-node
         *matTreeNodeDef="let node"
@@ -30,7 +30,7 @@
     </mat-tree>
   </div>
 
-  <div fxFlex="75%">
+  <div fxFlexFill>
     <div>
       <ng-container *ngIf="!!ActiveDocData">
         <markdown [src]="ActiveDocData"></markdown>
